@@ -115,9 +115,9 @@ class VendingMachine
 # vm.list_available_buy(:cola)
   def list_available_buy(drink)
     if current_slot_money > @drink_information[drink][:price] && @drink_information[drink][:stock] > 0
-      puts true
+      return true
     else
-      puts false
+      return false
     end
   end
 # ジュース値段以上の投入金額が投入されている条件下で購入操作を行うと、釣り銭（投入金額とジュース値段の差分）を出力する。

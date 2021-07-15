@@ -66,9 +66,9 @@ class VendingMachine
 # vm.drink_buy?(:cola)
   def drink_buy?(drink)
     if current_slot_money >= @drink_information[drink][:price] && @drink_information[drink][:stock] > 0
-      return true
+      puts true
     else
-      return false
+      puts false
     end
   end
 # 売り上げ金額
@@ -86,7 +86,7 @@ class VendingMachine
       @sale_amount += @drink_information[drink][:price]
       @refund = @slot_money -= @drink_information[drink][:price]
     else
-      return false
+      puts false
     end
   end
 # 投入金額が足りない場合もしくは在庫がない場合、購入操作を行っても何もしない
@@ -94,9 +94,9 @@ class VendingMachine
 # vm.not_drink_buy(:cola)
   def not_drink_buy(drink)
     if current_slot_money < @drink_information[drink][:price] || @drink_information[drink][:stock] == 0
-      return false
+      puts false
     else
-      return true
+      puts true
     end
   end
 # 投入金額、在庫の点で購入可能なドリンクのリストを取得できる
